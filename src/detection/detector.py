@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import numpy as np
 import pandas as pd
 from src.models.statistical import StatisticalDetector
 from src.models.isolation_forest import IsolationForestDetector

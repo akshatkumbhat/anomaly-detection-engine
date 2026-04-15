@@ -9,7 +9,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from src.data.fetcher import DataFetcher
 from src.data.feature_engineer import FeatureEngineer
 from src.data.preprocessor import Preprocessor
-from src.models.statistical import StatisticalDetector
 from src.models.isolation_forest import IsolationForestDetector
 from src.models.autoencoder import LSTMAutoencoder
 from src.utils.helpers import load_config, ensure_dir
@@ -34,7 +33,6 @@ def main():
 
     # --- Statistical (no training needed) ---
     print("1. Statistical Detector — no training needed ✓")
-    stat = StatisticalDetector(config)
 
     # --- Isolation Forest ---
     print("2. Training Isolation Forest...")

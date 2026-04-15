@@ -9,12 +9,11 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../.
 
 from src.data.fetcher import DataFetcher
 from src.data.feature_engineer import FeatureEngineer
-from src.data.preprocessor import Preprocessor
 from src.models.statistical import StatisticalDetector
 from src.models.isolation_forest import IsolationForestDetector
 from src.models.ensemble import EnsembleDetector
 from src.detection.stream_simulator import StreamSimulator
-from dashboard.components.charts import price_with_anomalies, anomaly_timeline
+from dashboard.components.charts import price_with_anomalies
 
 st.set_page_config(page_title="Real-Time Detection", layout="wide")
 st.title("🔴 Real-Time Anomaly Detection")
