@@ -80,7 +80,7 @@ Expected realistic metrics: AUC 0.55–0.75, F1 0.15–0.45. If you see 0.95+, s
 ### Installation
 
 ```bash
-git clone https://github.com/akshatkumbhat/Personal-Project-1.git
+git clone https://github.com/akshatkumbhat/anomaly-detection-engine.git
 cd Personal-Project-1
 pip install -r requirements.txt
 ```
