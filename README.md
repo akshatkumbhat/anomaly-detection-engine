@@ -1,6 +1,6 @@
 # Real-Time Anomaly Detection Engine for Financial Markets
 
-A multi-model anomaly detection system that identifies unusual patterns in financial time-series data (flash crashes, volume spikes, unusual volatility) using statistical methods, machine learning, and deep learning — with an interactive Streamlit dashboard for real-time monitoring and model benchmarking.
+A multi-model anomaly detection system that identifies unusual patterns in financial time-series data (flash crashes, volume spikes, unusual volatility) using statistical methods, machine learning, and deep learning, with an interactive Streamlit dashboard for real-time monitoring and model benchmarking.
 
 Built as an advanced data science project for Computational Modeling and Data Analytics.
 
@@ -57,16 +57,16 @@ Built as an advanced data science project for Computational Modeling and Data An
 | **Isolation Forest** | Random partitioning of feature space | Multi-dimensional outliers (price + volume + volatility) |
 | **LSTM Autoencoder** | Reconstruction error on sequences | Temporal pattern breaks the model hasn't seen before |
 | **Ensemble** | Weighted voting across all models | Higher confidence detections via consensus |
-| **Naive Baseline** | Simple return/volume thresholds | Sanity check — ML models must beat this to prove value |
+| **Naive Baseline** | Simple return/volume thresholds | Sanity check. ML models must beat this to prove value |
 
 ## Honest Evaluation
 
 This project deliberately avoids the inflated metrics common in anomaly detection tutorials:
 
-- **Temporal train/test split** — models train on historical data only, tested on unseen future data. No look-ahead bias.
-- **Point-level labeling** — individual days are labeled anomalous based on actual behavior (|return| > 3% or volume z-score > 3), not hand-picked date ranges.
-- **Naive baseline comparison** — a simple threshold rule is included. If ML models can't beat it, they aren't adding value.
-- **Contamination set to `auto`** — no information leakage about anomaly rates.
+- **Temporal train/test split**: models train on historical data only, tested on unseen future data. No look-ahead bias.
+- **Point-level labeling**: individual days are labeled anomalous based on actual behavior (|return| > 3% or volume z-score > 3), not hand-picked date ranges.
+- **Naive baseline comparison**: a simple threshold rule is included. If ML models can't beat it, they aren't adding value.
+- **Contamination set to `auto`**: no information leakage about anomaly rates.
 
 Expected realistic metrics: AUC 0.55–0.75, F1 0.15–0.45. If you see 0.95+, something is wrong.
 
@@ -81,7 +81,7 @@ Expected realistic metrics: AUC 0.55–0.75, F1 0.15–0.45. If you see 0.95+, s
 
 ```bash
 git clone https://github.com/akshatkumbhat/anomaly-detection-engine.git
-cd Personal-Project-1
+cd anomaly-detection-engine
 pip install -r requirements.txt
 ```
 
@@ -132,7 +132,7 @@ Select any ticker and time period, adjust detection sensitivity, and explore fla
 ├── dashboard/                  # Streamlit app with 3 pages
 ├── scripts/                    # Data download and model training CLIs
 ├── tests/                      # 25 unit tests (pytest)
-└── notebooks/                  # EDA, experiments, evaluation (WIP)
+└── notebooks/                  # EDA, experiments, evaluation
 ```
 
 ## Tech Stack
@@ -148,8 +148,8 @@ Select any ticker and time period, adjust detection sensitivity, and explore fla
 ## Research Papers
 
 ### Core Methods
-- Liu, F.T., Ting, K.M. and Zhou, Z.H. (2008) — [Isolation Forest](https://ieeexplore.ieee.org/document/4781136). Foundational tree-based anomaly detection algorithm.
-- Malhotra, P. et al. (2016) — [LSTM-based Encoder-Decoder for Multi-Sensor Anomaly Detection](https://arxiv.org/abs/1607.00148). Architecture used for the autoencoder model.
+- Liu, F.T., Ting, K.M. and Zhou, Z.H. (2008). [Isolation Forest](https://ieeexplore.ieee.org/document/4781136). Foundational tree-based anomaly detection algorithm.
+- Malhotra, P. et al. (2016). [LSTM-based Encoder-Decoder for Multi-Sensor Anomaly Detection](https://arxiv.org/abs/1607.00148). Architecture used for the autoencoder model.
 - [Combination of Isolation Forest and LSTM Autoencoder for Anomaly Detection](https://ieeexplore.ieee.org/document/9590143/) — validates the ensemble approach.
 
 ### Surveys
